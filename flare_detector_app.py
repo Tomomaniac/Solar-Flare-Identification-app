@@ -128,21 +128,21 @@ def extract_features_v3(img_normalized, img_raw):
 def load_models():
     """Load all models (cached for performance)"""
     models = {
-        'v1_131': joblib.load("model_v1_131.pkl"),
-        'v1_193': joblib.load("model_v1_193.pkl"),
-        'v3_131': joblib.load("model_v3_131.pkl"),
-        'v3_193': joblib.load("model_v3_193.pkl")
+        'v1_131': joblib.load("models/model_v1_131.pkl"),
+        'v1_193': joblib.load("models/model_v1_193.pkl"),
+        'v3_131': joblib.load("models/model_v3_131.pkl"),
+        'v3_193': joblib.load("models/model_v3_193.pkl")
     }
     
-    with open("feature_columns_v1.pkl", 'rb') as f:
+    with open("models/feature_columns_v1.pkl", 'rb') as f:
         feature_cols_v1 = pickle.load(f)
     
-    with open("feature_columns_v3.pkl", 'rb') as f:
+    with open("models/feature_columns_v3.pkl", 'rb') as f:
         feature_cols_v3 = pickle.load(f)
     
     return models, feature_cols_v1, feature_cols_v3
-
-# ============================================================
+    
+#============================================================
 # STREAMLIT APP
 # ============================================================
 
